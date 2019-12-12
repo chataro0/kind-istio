@@ -1,16 +1,3 @@
-#apiVersion: v1
-#kind: PersistentVolumeClaim
-#metadata:
-#  name: web-pvc
-#spec:
-#  accessModes:
-#    - ReadWriteOnce
-#  volumeMode: Filesystem
-#  storageClassName: gp2
-#  resources:
-#    requests:
-#      storage: 8Gi
-#---
 apiVersion: v1
 kind: Service
 metadata:
@@ -20,7 +7,7 @@ spec:
   - port: 8080
     protocol: TCP
     targetPort: 8080
-    name: httpname
+    name: http
   selector:
     app: web
 ---
